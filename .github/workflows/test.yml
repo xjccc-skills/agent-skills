@@ -1,0 +1,64 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  SKILL_DIR: typesafe-web-extract/skills/typesafe-web-extract
+
+jobs:
+  manifests:
+    # A malformed manifest breaks installation for everyone; check it first.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifests and version agreement
+        run: |
+          python3 - <<'PY'
+          import json
+          paths = [
+            ".claude-plugin/marketplace.json",
+            ".agents/plugins/marketplace.json",
+            "typesafe-web-extract/.claude-plugin/plugin.json",
+            "typesafe-web-extract/.codex-plugin/plugin.json",
+          ]
+          docs = {}
+          for p in paths:
+              docs[p] = json.load(open(p))
+              print("ok", p)
+          pj = docs["typesafe-web-extract/.claude-plugin/plugin.json"]
+          cj = docs["typesafe-web-extract/.codex-plugin/plugin.json"]
+          entry = docs[".claude-plugin/marketplace.json"]["plugins"][0]
+          assert pj["name"] == cj["name"] == entry["name"], "plugin names disagree"
+          assert pj["version"] == cj["version"] == entry["version"], "versions disagree"
+          print("name/version agreement:", pj["name"], pj["version"])
+          PY
+
+  offline:
+    # No key, no network, no install - the suite that must always be green.
+    runs-on: ubuntu-latest
+    needs: manifests
+    strategy:
+      matrix:
+        node: ['20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node "$SKILL_DIR/test/offline.mjs"
+
+  live:
+    # Skips itself (exit 0) when the secret is absent, so forks stay green.
+    runs-on: ubuntu-latest
+    needs: offline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node "$SKILL_DIR/test/live.mjs"
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}

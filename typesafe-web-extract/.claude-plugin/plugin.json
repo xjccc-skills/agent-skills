@@ -1,0 +1,19 @@
+{
+  "name": "typesafe-web-extract",
+  "description": "Extract content from live web pages: the browser navigates and copies verbatim, TypeSafe/Jev makes the typed judgments (select, rank, verify). Zero dependencies.",
+  "version": "1.0.0",
+  "author": {
+    "name": "xjccc"
+  },
+  "homepage": "https://github.com/xjccc-skills/agent-skills",
+  "repository": "https://github.com/xjccc-skills/agent-skills",
+  "license": "MIT",
+  "keywords": [
+    "web-extraction",
+    "scraping",
+    "typesafe",
+    "jev",
+    "browser",
+    "provenance"
+  ]
+}

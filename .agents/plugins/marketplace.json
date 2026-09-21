@@ -1,0 +1,19 @@
+{
+  "name": "xjccc-skills",
+  "interface": {
+    "displayName": "Agent Skills by xjccc"
+  },
+  "plugins": [
+    {
+      "name": "typesafe-web-extract",
+      "source": {
+        "source": "local",
+        "path": "./typesafe-web-extract"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

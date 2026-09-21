@@ -1,0 +1,8 @@
+# Optional, read only by Codex. Other Agent Skills clients ignore this file.
+interface:
+  display_name: "TypeSafe Web Extract"
+  short_description: "Browser-driven extraction with typed Jev judgments and provenance"
+  brand_color: "#3B82F6"
+
+policy:
+  allow_implicit_invocation: true
