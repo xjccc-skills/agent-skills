@@ -1,0 +1,16 @@
+{
+  "name": "jev-triage",
+  "version": "1.0.0",
+  "description": "Narrow a large candidate set to the few that matter before they enter the model's context, using TypeSafe/Jev for the typed judgment. Zero dependencies.",
+  "author": { "name": "xjccc" },
+  "homepage": "https://github.com/xjccc-skills/agent-skills",
+  "repository": "https://github.com/xjccc-skills/agent-skills",
+  "license": "MIT",
+  "keywords": ["token-budget", "context", "triage", "typesafe", "jev", "candidate-selection"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Jev Triage",
+    "shortDescription": "Keep the haystack out of context: narrow candidates with Jev before they cost tokens",
+    "longDescription": "Narrow a large candidate set to the few that matter before they enter the model's context, using TypeSafe/Jev for the typed judgment. Zero dependencies. Requires a TypeSafe API key; run scripts/preflight.mjs to check. Includes a break-even gate that refuses to narrow when doing so would cost more than it saves."
+  }
+}

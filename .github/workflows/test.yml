@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  SKILL_DIR: typesafe-web-extract/skills/typesafe-web-extract
+  SKILL_DIR: jev-triage/skills/jev-triage
 
 jobs:
   manifests:
@@ -21,15 +21,15 @@ jobs:
           paths = [
             ".claude-plugin/marketplace.json",
             ".agents/plugins/marketplace.json",
-            "typesafe-web-extract/.claude-plugin/plugin.json",
-            "typesafe-web-extract/.codex-plugin/plugin.json",
+            "jev-triage/.claude-plugin/plugin.json",
+            "jev-triage/.codex-plugin/plugin.json",
           ]
           docs = {}
           for p in paths:
               docs[p] = json.load(open(p))
               print("ok", p)
-          pj = docs["typesafe-web-extract/.claude-plugin/plugin.json"]
-          cj = docs["typesafe-web-extract/.codex-plugin/plugin.json"]
+          pj = docs["jev-triage/.claude-plugin/plugin.json"]
+          cj = docs["jev-triage/.codex-plugin/plugin.json"]
           entry = docs[".claude-plugin/marketplace.json"]["plugins"][0]
           assert pj["name"] == cj["name"] == entry["name"], "plugin names disagree"
           assert pj["version"] == cj["version"] == entry["version"], "versions disagree"

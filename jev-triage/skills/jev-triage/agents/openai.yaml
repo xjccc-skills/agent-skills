@@ -1,7 +1,7 @@
 # Optional, read only by Codex. Other Agent Skills clients ignore this file.
 interface:
-  display_name: "TypeSafe Web Extract"
-  short_description: "Browser-driven extraction with typed Jev judgments and provenance"
+  display_name: "Jev Triage"
+  short_description: "Narrow candidates with Jev before they enter the model's context"
   brand_color: "#3B82F6"
 
 policy:

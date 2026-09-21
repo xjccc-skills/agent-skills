@@ -1,18 +1,11 @@
 {
   "name": "xjccc-skills",
-  "interface": {
-    "displayName": "Agent Skills by xjccc"
-  },
+  "interface": { "displayName": "Agent Skills by xjccc" },
   "plugins": [
     {
-      "name": "typesafe-web-extract",
-      "source": {
-        "source": "local",
-        "path": "./typesafe-web-extract"
-      },
-      "policy": {
-        "installation": "AVAILABLE"
-      },
+      "name": "jev-triage",
+      "source": { "source": "local", "path": "./jev-triage" },
+      "policy": { "installation": "AVAILABLE" },
       "category": "Productivity"
     }
   ]

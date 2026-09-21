@@ -1,31 +1,20 @@
 {
   "name": "xjccc-skills",
   "description": "Agent Skills by xjccc",
-  "owner": {
-    "name": "xjccc",
-    "url": "https://github.com/xjccc-skills"
-  },
+  "owner": { "name": "xjccc", "url": "https://github.com/xjccc-skills" },
   "plugins": [
     {
-      "name": "typesafe-web-extract",
-      "source": "./typesafe-web-extract",
-      "displayName": "TypeSafe Web Extract",
-      "description": "Extract content from live web pages: the browser navigates and copies verbatim, TypeSafe/Jev makes the typed judgments (select, rank, verify). Zero dependencies.",
+      "name": "jev-triage",
+      "source": "./jev-triage",
+      "displayName": "Jev Triage",
+      "description": "Narrow a large candidate set to the few that matter before they enter the model's context, using TypeSafe/Jev for the typed judgment. Zero dependencies.",
       "version": "1.0.0",
-      "author": {
-        "name": "xjccc"
-      },
+      "author": { "name": "xjccc" },
       "homepage": "https://github.com/xjccc-skills/agent-skills",
       "repository": "https://github.com/xjccc-skills/agent-skills",
       "license": "MIT",
       "category": "Productivity",
-      "keywords": [
-        "web-extraction",
-        "scraping",
-        "typesafe",
-        "jev",
-        "browser"
-      ]
+      "keywords": ["token-budget", "context", "triage", "typesafe", "jev"]
     }
   ]
 }

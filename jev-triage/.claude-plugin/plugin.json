@@ -1,0 +1,10 @@
+{
+  "name": "jev-triage",
+  "description": "Narrow a large candidate set to the few that matter before they enter the model's context, using TypeSafe/Jev for the typed judgment. Zero dependencies.",
+  "version": "1.0.0",
+  "author": { "name": "xjccc" },
+  "homepage": "https://github.com/xjccc-skills/agent-skills",
+  "repository": "https://github.com/xjccc-skills/agent-skills",
+  "license": "MIT",
+  "keywords": ["token-budget", "context", "triage", "typesafe", "jev", "candidate-selection"]
+}
