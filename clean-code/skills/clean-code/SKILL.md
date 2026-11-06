@@ -1,6 +1,6 @@
 ---
 name: clean-code
-description: "Apply Clean Code principles to maintainability reviews and scoped readability refactors, or when the user asks for Clean Code guidance while implementing or fixing code. Use contract-aware checks for names, functions, errors, modules, and tests."
+description: "Apply Clean Code and Refactoring principles to maintainability reviews and scoped readability refactors, or when the user requests either approach while implementing or fixing code. Use contract-aware checks and small, verified transformations."
 ---
 
 # Clean Code: make the next change easier
@@ -9,7 +9,12 @@ Use this skill when code is hard to understand, change, test, or diagnose. Treat
 
 ## Source and interpretation
 
-This is an independent, selective synthesis of Robert C. Martin's *Clean Code: A Handbook of Agile Software Craftsmanship* (Prentice Hall, 2008), with original examples. It is not a chapter-by-chapter summary. Naming, function design, comments, data abstraction, errors, tests, systems, simple design, and concurrency draw on the book. Boundary schemas and type narrowing, compatibility-aware migrations, and the trade-off examples are modern engineering adaptations; they are not presented as quotations or universal rules from the book. Apply the repository's language idioms and contracts when a recommendation does not fit.
+This is an independent, selective synthesis of two complementary books:
+
+- Robert C. Martin's *Clean Code: A Handbook of Agile Software Craftsmanship* (Prentice Hall, 2008) supplies design criteria for names, functions, comments, errors, modules, tests, and concurrency.
+- Martin Fowler's *Refactoring: Improving the Design of Existing Code*, second edition (2018, with Kent Beck), supplies the process of small, behavior-preserving transformations and names for common techniques.
+
+This is not a chapter-by-chapter summary. Examples, boundary schemas and type narrowing, compatibility safeguards, and contextual trade-offs are this skill's engineering adaptations rather than quotations or universal rules from either book. Apply the repository's language idioms and contracts when a recommendation does not fit.
 
 ## Choose the pass
 
@@ -17,7 +22,7 @@ Start by naming the current mode and its boundary:
 
 - **Implement:** keep the new path easy to read and place policy in the right module.
 - **Fix:** reproduce the failure, make the smallest correction, and add or adjust a regression test when the behavior warrants one.
-- **Refactor:** establish behavior coverage, change one seam at a time, and compare the result with the baseline.
+- **Refactor:** establish the observable behavior, change one seam at a time, and verify each step using the [refactoring workflow](references/refactoring.md). Keep intended feature changes and bug fixes distinct from behavior-preserving steps.
 - **Review:** report concrete risks and confusing decisions, ordered by impact; do not turn preferences into defects. Propose changes without editing unless implementation is requested.
 
 Read the repository's local conventions, existing tests, and nearby code before choosing rules. Apply only the principle groups relevant to the changed path. Use the sequence **signal → action → proof** for every finding:
@@ -46,6 +51,7 @@ Do not enforce arbitrary limits such as a universal line count, parameter count,
 
 - When a query changes state, an object exposes its representation, domain code constructs dependencies, or a proposed abstraction adds indirection, use the [design decisions](references/principles.md#design-decisions) to choose a boundary.
 - When similar code, function length, a public rename, an absent value, or a small bug fix raises a refactoring question, read [decision examples](references/decision-examples.md). They include reasons to retain a design as well as reasons to change it.
+- When implementing a refactor, preparing existing code for an authorized change, or reviewing a transformation's equivalence, read [refactoring techniques](references/refactoring.md). Select the relevant technique; keep reviews read-only.
 - When the touched path has shared mutable state, overlapping asynchronous work, locks, or an ordering dependency, read [concurrency checks](references/concurrency.md). Load this reference only for those paths.
 
 ## Working loop

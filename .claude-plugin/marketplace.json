@@ -20,7 +20,7 @@
       "name": "clean-code",
       "source": "./clean-code",
       "displayName": "Clean Code",
-      "description": "Apply Clean Code principles to maintainability reviews and scoped readability refactors, or when the user asks for Clean Code guidance while implementing or fixing code.",
+      "description": "Combine Clean Code design criteria with Refactoring techniques for maintainability reviews and scoped improvements, using small verified steps that preserve behavior.",
       "version": "1.0.0",
       "author": { "name": "xjccc" },
       "homepage": "https://github.com/xjccc-skills/agent-skills",
