@@ -15,6 +15,19 @@
       "license": "MIT",
       "category": "Productivity",
       "keywords": ["token-budget", "context", "triage", "typesafe", "jev"]
+    },
+    {
+      "name": "clean-code",
+      "source": "./clean-code",
+      "displayName": "Clean Code",
+      "description": "Apply Clean Code principles to maintainability reviews and scoped readability refactors, or when the user asks for Clean Code guidance while implementing or fixing code.",
+      "version": "1.0.0",
+      "author": { "name": "xjccc" },
+      "homepage": "https://github.com/xjccc-skills/agent-skills",
+      "repository": "https://github.com/xjccc-skills/agent-skills",
+      "license": "MIT",
+      "category": "Development",
+      "keywords": ["clean-code", "refactoring", "code-review", "maintainability", "testing"]
     }
   ]
 }

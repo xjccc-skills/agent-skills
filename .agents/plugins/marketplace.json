@@ -7,6 +7,12 @@
       "source": { "source": "local", "path": "./jev-triage" },
       "policy": { "installation": "AVAILABLE" },
       "category": "Productivity"
+    },
+    {
+      "name": "clean-code",
+      "source": { "source": "local", "path": "./clean-code" },
+      "policy": { "installation": "AVAILABLE" },
+      "category": "Development"
     }
   ]
 }

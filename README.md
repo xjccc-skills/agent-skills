@@ -9,6 +9,7 @@ so they install with the official plugin commands in **Claude Code** and
 | Skill | What it does | Requires |
 | :---- | :----------- | :------- |
 | [**jev-triage**](jev-triage/) | Keeps a large candidate set out of the model's context: enumerate candidates in code, let [TypeSafe/Jev](https://typesafe.ai) pick over cheap pointers, let only the selected few through. Includes a break-even gate that refuses when narrowing would cost more than it saves, and reports the token ratio on every run. | Node 20+, a TypeSafe API key |
+| [**clean-code**](clean-code/) | Applies Clean Code principles to maintainability reviews and scoped readability refactors, with signal → action → proof guidance for names, boundaries, errors, modules, smells, and tests. | None |
 
 ## Install
 

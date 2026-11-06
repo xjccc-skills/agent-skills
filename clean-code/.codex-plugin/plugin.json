@@ -1,0 +1,16 @@
+{
+  "name": "clean-code",
+  "version": "1.0.0",
+  "description": "Apply Clean Code principles to maintainability reviews and scoped readability refactors, or when the user asks for Clean Code guidance while implementing or fixing code.",
+  "author": { "name": "xjccc" },
+  "homepage": "https://github.com/xjccc-skills/agent-skills",
+  "repository": "https://github.com/xjccc-skills/agent-skills",
+  "license": "MIT",
+  "keywords": ["clean-code", "refactoring", "code-review", "maintainability", "testing"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Clean Code",
+    "shortDescription": "Make code easier to understand, change, and verify",
+    "longDescription": "Apply Clean Code principles to maintainability reviews and scoped readability refactors, or when the user asks for Clean Code guidance while implementing or fixing code. Uses signal-action-proof guidance for names, functions, comments, errors, boundaries, modules, smells, and tests without imposing arbitrary numeric rules."
+  }
+}
